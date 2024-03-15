@@ -1,4 +1,4 @@
-This is the error after running face_recognition_system.txt
+#This is the error after running face_recognition_system.txt#
 
 PS C:\Users\sujun\Documents\CODES\Python\FRmodel> python -u "c:\Users\sujun\Documents\CODES\Python\FRmodel\model2\face_recognition_system.py"
 Traceback (most recent call last):
