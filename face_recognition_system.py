@@ -1,26 +1,29 @@
 import cv2
 import face_recognition
 import numpy as np
+import os
 
-def load_known_faces():
+def load_known_faces(npy_file_path, txt_file_path):
     known_face_encodings = []
     known_face_names = []
 
-    with open('face_encodings.npy', 'rb') as f:
+    with open(npy_file_path, 'rb') as f:
         known_face_encodings = np.load(f)
 
-    # Load face names from file
-    with open('face_names.txt', 'r') as f:
+    with open(txt_file_path, 'r') as f:
         known_face_names = f.read().splitlines()
 
     return known_face_encodings, known_face_names
+
+npy_file_path = "C:\\Users\\sujun\\Documents\\CODES\\Python\\FRmodel\\model2\\face_encodings.npy"
+txt_file_path = "C:\\Users\\sujun\\Documents\\CODES\\Python\\FRmodel\\model2\\face_names.txt"
 
 face_locations = []
 face_encodings = []
 face_names = []
 process_this_frame = True
 
-known_face_encodings, known_face_names = load_known_faces()
+known_face_encodings, known_face_names = load_known_faces(npy_file_path, txt_file_path)
 
 video_capture = cv2.VideoCapture(0)
 
@@ -65,6 +68,5 @@ while True:
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-# Release handle to the webcam
 video_capture.release()
 cv2.destroyAllWindows()
