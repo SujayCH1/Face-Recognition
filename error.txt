@@ -1,0 +1,66 @@
+This is the error after running face_recognition_system.txt
+
+PS C:\Users\sujun\Documents\CODES\Python\FRmodel> python -u "c:\Users\sujun\Documents\CODES\Python\FRmodel\model2\face_recognition_system.py"
+Traceback (most recent call last):
+  File "c:\Users\sujun\Documents\CODES\Python\FRmodel\model2\face_recognition_system.py", line 51, in <module>
+    face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
+  File "C:\Users\sujun\AppData\Roaming\Python\Python310\site-packages\face_recognition\api.py", line 214, in face_encodings
+    return [np.array(face_encoder.compute_face_descriptor(face_image, raw_landmark_set, num_jitters)) for raw_landmark_set in raw_landmarks]
+  File "C:\Users\sujun\AppData\Roaming\Python\Python310\site-packages\face_recognition\api.py", line 214, in <listcomp>
+    return [np.array(face_encoder.compute_face_descriptor(face_image, raw_landmark_set, num_jitters)) for raw_landmark_set in raw_landmarks]
+TypeError: compute_face_descriptor(): incompatible function arguments. The following argument types are supported:
+    1. (self: _dlib_pybind11.face_recognition_model_v1, img: numpy.ndarray[(rows,cols,3),numpy.uint8], face: _dlib_pybind11.full_object_detection, num_jitters: int = 0, padding: float = 0.25) -> _dlib_pybind11.vector
+    2. (self: _dlib_pybind11.face_recognition_model_v1, img: numpy.ndarray[(rows,cols,3),numpy.uint8], num_jitters: int = 0) -> _dlib_pybind11.vector
+    3. (self: _dlib_pybind11.face_recognition_model_v1, img: numpy.ndarray[(rows,cols,3),numpy.uint8], faces: _dlib_pybind11.full_object_detections, num_jitters: int = 0, padding: float = 0.25) -> _dlib_pybind11.vectors
+    4. (self: _dlib_pybind11.face_recognition_model_v1, batch_img: List[numpy.ndarray[(rows,cols,3),numpy.uint8]], batch_faces: List[_dlib_pybind11.full_object_detections], num_jitters: int = 0, padding: float = 0.25) -> _dlib_pybind11.vectorss
+    5. (self: _dlib_pybind11.face_recognition_model_v1, batch_img: List[numpy.ndarray[(rows,cols,3),numpy.uint8]], num_jitters: int = 0) -> _dlib_pybind11.vectors
+
+Invoked with: <_dlib_pybind11.face_recognition_model_v1 object at 0x000001EF8C877570>, array([[[155, 156, 152],
+        [155, 156, 152],
+        [155, 156, 152],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[154, 155, 151],
+        [154, 155, 151],
+        [155, 156, 152],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       [[154, 155, 149],
+        [154, 155, 149],
+        [154, 155, 149],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]],
+
+       ...,
+
+       [[ 97, 103, 106],
+        [ 81,  89,  85],
+        [ 77,  85,  80],
+        ...,
+        [126, 115, 115],
+        [131, 121, 121],
+        [135, 125, 125]],
+
+       [[ 91,  95,  95],
+        [ 78,  82,  82],
+        [ 76,  80,  80],
+        ...,
+        [125, 113, 115],
+        [130, 116, 118],
+        [138, 124, 126]],
+
+       [[ 84,  89,  89],
+        [ 78,  84,  84],
+        [ 75,  81,  81],
+        ...,
+        [124, 113, 114],
+        [129, 116, 118],
+        [132, 118, 120]]], dtype=uint8), <_dlib_pybind11.full_object_detection object at 0x000001EFFE36CCB0>, 1
